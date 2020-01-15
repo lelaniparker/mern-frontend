@@ -431,10 +431,20 @@ export class HomePage extends React.Component {
             </Section>
             <Columns>
             { 
-                vitamins.map(vitamin => (
-                    <Columns.Column>{vitamin.productName}
+                vitamins.map(vitamin => {
+                    return (
+                    <Columns.Column>
+                        <Heading class="subtitle">
+                            Product: {vitamin.productName}
+                        </Heading>
+                        <p>Ingredients:</p>
+                        {vitamin.vitaminInformation.map((info) => {
+                            return (
+                                <div>{info.name}</div>
+                            )
+                        })}
                     </Columns.Column>
-                ))
+                )})
             }
             </Columns>
         </Section>
