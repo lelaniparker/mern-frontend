@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import React, { Component } from "react";
 import {
     Route,
     BrowserRouter as Router,
@@ -21,15 +21,15 @@ class App extends Component {
         }
     }
     render() {
-        const {loggedInUser} = this.state
+        const { loggedInUser } = this.state
         return (
             <Router>
                 <Nav loggedInUser={loggedInUser} />
 
                 <Switch>
                     {/* <Route path="/wishlist/:id" component={UserWishlist} />
-                    <Route path="/register" component={UserRegister} />
-                    <Route path="/login" component={UserLogin} />
+                    <Route path="/register" component={UserRegister} /> */
+                        <Route exact path="/login" component={UserLogin} /> /*
                     <Route path="/dashboard/:id" component={UserDashboard} />
                     <Route path="/blog/:id" component={BlogPost} />
                     <Route path="/blog" component={Blog} /> */}
