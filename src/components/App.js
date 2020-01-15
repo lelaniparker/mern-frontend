@@ -15,6 +15,7 @@ import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
 import {Container} from "react-bulma-components";
 
+import Vitamin from "./Vitamin/Vitamin";
 
 class App extends Component {
     constructor(props) {
@@ -29,14 +30,19 @@ class App extends Component {
             <Router>
                 <Container>
                     <Nav loggedInUser={loggedInUser} />
-                
+                    <Link to="/blog">Blog</Link>
+                    <br />
+                    <Link to="/vitamin">Vitamin</Link>
+
                 <Switch>
+                    {/* this should be /vitamin/:id */}
+                    <Route path="/vitamin/" component={Vitamin} />
                     {/* <Route path="/wishlist/:id" component={UserWishlist} />
                     <Route path="/register" component={UserRegister} />
                     <Route path="/login" component={UserLogin} />
                     <Route path="/dashboard/:id" component={UserDashboard} />
-                    <Route path="/blog/:id" component={BlogPost} />
-                    <Route path="/blog" component={Blog} /> */}
+                    <Route path="/blog/:id" component={BlogPost} /> */}
+                    <Route path="/blog" component={Blog} />
                     <Route exact path="/" component={HomePage} />
                 </Switch>
                 </Container>
