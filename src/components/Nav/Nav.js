@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from "react"
-import { Navbar, Container } from "react-bulma-components"
+import React, { Component, Fragment } from "react";
+import { Navbar, Container } from "react-bulma-components";
+import { Link } from "react-router-dom";
 
 // The Nav component renders the nav bar at the top of the page
 // It is a class component because it requires state to manage the hamburger menu toggle
@@ -25,6 +26,7 @@ class Nav extends Component {
                             <Navbar.Item href="#">My Wishlist</Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
+                    <Link to={`/dashboard/`}>Dashboard</Link>
                     <Navbar.Item href="#">Logout</Navbar.Item>
                 </Navbar.Container>
             </Fragment>
@@ -35,7 +37,7 @@ class Nav extends Component {
         return (
             <Fragment>
                 <Navbar.Container position="start">
-                    <Navbar.Item href="#">Home</Navbar.Item>
+                    <Link to="/"> Home</Link>
                 </Navbar.Container>
                 <Navbar.Container position="end">
                         <Navbar.Item href="#">Login</Navbar.Item>
