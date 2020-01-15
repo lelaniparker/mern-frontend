@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {
-    Route,
     Link,
+    Route,
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
@@ -13,6 +13,8 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
+import {Container} from "react-bulma-components";
+
 import Vitamin from "./Vitamin/Vitamin";
 
 class App extends Component {
@@ -26,11 +28,11 @@ class App extends Component {
         const {loggedInUser} = this.state
         return (
             <Router>
-                <Nav loggedInUser={loggedInUser} />
-
-                <Link to="/blog">Blog</Link>
-                <br />
-                <Link to="/vitamin">Vitamin</Link>
+                <Container>
+                    <Nav loggedInUser={loggedInUser} />
+                    <Link to="/blog">Blog</Link>
+                    <br />
+                    <Link to="/vitamin">Vitamin</Link>
 
                 <Switch>
                     {/* this should be /vitamin/:id */}
@@ -41,9 +43,9 @@ class App extends Component {
                     <Route path="/dashboard/:id" component={UserDashboard} />
                     <Route path="/blog/:id" component={BlogPost} /> */}
                     <Route path="/blog" component={Blog} />
-                    {/* <Route exact path="/" component={HomePage} /> */}
+                    <Route exact path="/" component={HomePage} />
                 </Switch>
-
+                </Container>
             </Router>
         )
     }
