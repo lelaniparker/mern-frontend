@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {
+    Link,
     Route,
     BrowserRouter as Router,
     Switch
@@ -12,6 +13,8 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
+import {Container} from "react-bulma-components";
+
 
 class App extends Component {
     constructor(props) {
@@ -24,8 +27,9 @@ class App extends Component {
         const {loggedInUser} = this.state
         return (
             <Router>
-                <Nav loggedInUser={loggedInUser} />
-
+                <Container>
+                    <Nav loggedInUser={loggedInUser} />
+                
                 <Switch>
                     {/* <Route path="/wishlist/:id" component={UserWishlist} />
                     <Route path="/register" component={UserRegister} />
@@ -33,9 +37,9 @@ class App extends Component {
                     <Route path="/dashboard/:id" component={UserDashboard} />
                     <Route path="/blog/:id" component={BlogPost} />
                     <Route path="/blog" component={Blog} /> */}
-                    {/* <Route exact path="/" component={HomePage} /> */}
+                    <Route exact path="/" component={HomePage} />
                 </Switch>
-
+                </Container>
             </Router>
         )
     }

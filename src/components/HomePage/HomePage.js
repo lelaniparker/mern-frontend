@@ -429,6 +429,15 @@ export class HomePage extends React.Component {
                 <Heading>Welcome!</Heading>
                 <p>At AnalyzeVit, we make it easy to compare the ingredients in your vitamins.</p>
             </Section>
+
+            <Section>
+            <form data-cy="new-post-form">
+			<label className="label">Enter a Vitamin</label>
+			<input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="Vitamin" required></input>
+			<input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={{marginTop:10}}></input>
+            </form>
+            </Section>
+
             <Columns>
             { 
                 vitamins.map(vitamin => {
@@ -440,7 +449,7 @@ export class HomePage extends React.Component {
                         <p>Ingredients:</p>
                         {vitamin.vitaminInformation.map((info) => {
                             return (
-                                <div>{info.name}</div>
+                                <div>{info.name} – {info.amount}</div>
                             )
                         })}
                     </Columns.Column>
