@@ -30,9 +30,6 @@ class App extends Component {
             <Router>
                 <Container>
                     <Nav loggedInUser={loggedInUser} />
-                    <Link to="/blog">Blog</Link>
-                    <br />
-                    <Link to="/vitamin">Vitamin</Link>
 
                 <Switch>
                     {/* this should be /vitamin/:id */}

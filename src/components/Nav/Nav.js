@@ -37,7 +37,15 @@ class Nav extends Component {
         return (
             <Fragment>
                 <Navbar.Container position="start">
-                    <Link to="/"> Home</Link>
+                    <Navbar.Item>
+                        <Link to="/"> Home</Link>
+                    </Navbar.Item>
+                    <Navbar.Item>
+                        <Link to="/blog">Blog</Link>
+                    </Navbar.Item>
+                    <Navbar.Item>
+                        <Link to="/vitamin">Vitamin</Link>
+                    </Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
                         <Navbar.Item href="#">Login</Navbar.Item>
@@ -58,7 +66,7 @@ class Nav extends Component {
                         {/* Render the relevant links depending on whether or not a user is logged in */}
                         {loggedInUser ? this.navLoggedIn() : this.navLoggedOut()}
                         <Navbar.Brand>
-                        <Navbar.Item renderAs="p">{loggedInUser || "guest"}</Navbar.Item>
+                        <Navbar.Item renderAs="p">{loggedInUser || "Guest"}</Navbar.Item>
                         <Navbar.Burger onClick={this.handleClick} />
                         </Navbar.Brand>
                     </Navbar.Menu>
