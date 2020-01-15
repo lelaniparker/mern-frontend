@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {
     Route,
+    Link,
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
@@ -26,13 +27,15 @@ class App extends Component {
             <Router>
                 <Nav loggedInUser={loggedInUser} />
 
+                <Link to="/blog">Blog</Link>
+
                 <Switch>
                     {/* <Route path="/wishlist/:id" component={UserWishlist} />
                     <Route path="/register" component={UserRegister} />
                     <Route path="/login" component={UserLogin} />
                     <Route path="/dashboard/:id" component={UserDashboard} />
-                    <Route path="/blog/:id" component={BlogPost} />
-                    <Route path="/blog" component={Blog} /> */}
+                    <Route path="/blog/:id" component={BlogPost} /> */}
+                    <Route path="/blog" component={Blog} />
                     {/* <Route exact path="/" component={HomePage} /> */}
                 </Switch>
 
