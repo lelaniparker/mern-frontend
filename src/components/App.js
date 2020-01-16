@@ -33,12 +33,16 @@ class App extends Component {
                     <Link to="/blog">Blog</Link>
                     <br />
                     <Link to="/vitamin">Vitamin</Link>
+                    <br />
+            <Link to="/wishlist">My Wishlist</Link>
 
                 <Switch>
                     {/* this should be /vitamin/:id */}
                     <Route path="/vitamin/" component={Vitamin} />
-                    {/* <Route path="/wishlist/:id" component={UserWishlist} />
-                    <Route path="/register" component={UserRegister} />
+
+                    {/* This should be wishlist/:id */}
+                     <Route path="/wishlist/" component={UserWishlist} />
+                    {/*<Route path="/register" component={UserRegister} />
                     <Route path="/login" component={UserLogin} />
                     <Route path="/dashboard/:id" component={UserDashboard} />
                     <Route path="/blog/:id" component={BlogPost} /> */}
