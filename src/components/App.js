@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import React, { Component } from "react";
 import {
     Link,
     Route,
@@ -25,7 +25,7 @@ class App extends Component {
         }
     }
     render() {
-        const {loggedInUser} = this.state
+        const { loggedInUser } = this.state
         return (
             <Router>
                 <Container>
