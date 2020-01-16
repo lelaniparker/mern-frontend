@@ -22,13 +22,8 @@ class Nav extends Component {
         return (
             <Fragment>
                 <Navbar.Container position="start">
-<<<<<<< HEAD
                             <Navbar.Item href="#">Home</Navbar.Item>
                     <Link to="/wishlist">My Wishlist</Link>
-=======
-                    <Navbar.Item href="#">Home</Navbar.Item>
-                    <Navbar.Item href="#">My Wishlist</Navbar.Item>
->>>>>>> cc129600708de78dead65ed0da2ad1f84ac774cd
                 </Navbar.Container>
                 <Navbar.Container position="end">
                     <Link to={`/dashboard/`}>Dashboard</Link>
@@ -46,6 +41,7 @@ class Nav extends Component {
                     <Link to="/"> Home</Link>
                 </Navbar.Container>
                 <Navbar.Container position="end">
+                    <Link to="/login">Login</Link>
                     <Navbar.Item href="#">Login</Navbar.Item>
                     <Navbar.Item href="#">Register</Navbar.Item>
                 </Navbar.Container>
