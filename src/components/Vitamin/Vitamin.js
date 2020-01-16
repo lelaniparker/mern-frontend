@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import { Section } from "react-bulma-components";
+
 
 // need to get id for an individual item
 
@@ -110,6 +112,7 @@ export class Vitamin extends React.Component {
         const { vitamin } = this.state
         return(
             <Fragment>
+                <Section>
                 <p><b>Product Name:</b> <a href={vitamin.link}>{vitamin.productName}</a></p>
                 <p>{vitamin.vitaminInformation.map((info) => {
                     return(
@@ -119,6 +122,7 @@ export class Vitamin extends React.Component {
                         </div>
                     )
                 })}</p>
+                </Section>
             </Fragment>
         )
     }
