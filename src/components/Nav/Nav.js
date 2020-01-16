@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 // It is a class component because it requires state to manage the hamburger menu toggle
 class Nav extends Component {
     constructor(props) {
-		super(props)
-		this.state = {
-			active: false
-		}
+        super(props)
+        this.state = {
+            active: false
+        }
     }
 
     // handleClick is used to toggle the active state of the hamburger menu
@@ -22,11 +22,17 @@ class Nav extends Component {
         return (
             <Fragment>
                 <Navbar.Container position="start">
+<<<<<<< HEAD
                             <Navbar.Item href="#">Home</Navbar.Item>
                     <Link to="/wishlist">My Wishlist</Link>
+=======
+                    <Navbar.Item href="#">Home</Navbar.Item>
+                    <Navbar.Item href="#">My Wishlist</Navbar.Item>
+>>>>>>> cc129600708de78dead65ed0da2ad1f84ac774cd
                 </Navbar.Container>
                 <Navbar.Container position="end">
                     <Link to={`/dashboard/`}>Dashboard</Link>
+                    {/* <Navbar.Item href={`/wishlist?username=${loggedInUser}`}>My Wishlist</Navbar.Item> CHECKS IF USER IS LOGGED IN TO VIEW WISHLIST */}
                     <Navbar.Item href="#">Logout</Navbar.Item>
                 </Navbar.Container>
             </Fragment>
@@ -40,8 +46,8 @@ class Nav extends Component {
                     <Link to="/"> Home</Link>
                 </Navbar.Container>
                 <Navbar.Container position="end">
-                        <Navbar.Item href="#">Login</Navbar.Item>
-                        <Navbar.Item href="#">Register</Navbar.Item>
+                    <Navbar.Item href="#">Login</Navbar.Item>
+                    <Navbar.Item href="#">Register</Navbar.Item>
                 </Navbar.Container>
             </Fragment>
         )
@@ -52,14 +58,14 @@ class Nav extends Component {
         const { active } = this.state
         const { loggedInUser } = this.props
         return (
-            <Navbar color="info" fixed="top"  active={active}>
+            <Navbar color="info" fixed="top" active={active}>
                 <Container>
                     <Navbar.Menu>
                         {/* Render the relevant links depending on whether or not a user is logged in */}
                         {loggedInUser ? this.navLoggedIn() : this.navLoggedOut()}
                         <Navbar.Brand>
-                        <Navbar.Item renderAs="p">{loggedInUser || "guest"}</Navbar.Item>
-                        <Navbar.Burger onClick={this.handleClick} />
+                            <Navbar.Item renderAs="p">{loggedInUser || "guest"}</Navbar.Item>
+                            <Navbar.Burger onClick={this.handleClick} />
                         </Navbar.Brand>
                     </Navbar.Menu>
                 </Container>
