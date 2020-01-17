@@ -42,10 +42,10 @@ class App extends Component {
 
                     {/* This should be wishlist/:id */}
                      <Route path="/wishlist/" component={UserWishlist} />
-                    {/*<Route path="/register" component={UserRegister} />
+                    {/*<Route path="/register" component={UserRegister} />*/}
                     <Route path="/login" component={UserLogin} />
                     <Route path="/dashboard/:id" component={UserDashboard} />
-                    <Route path="/blog/:id" component={BlogPost} /> */}
+                    <Route path="/blog/:id" component={BlogPost} />
                     <Route path="/blog" component={Blog} />
                     <Route exact path="/" component={HomePage} />
                 </Switch>
