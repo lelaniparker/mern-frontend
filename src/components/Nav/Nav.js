@@ -22,7 +22,7 @@ class Nav extends Component {
         return (
             <Fragment>
                 <Navbar.Container position="start">
-                            <Navbar.Item href="#">Home</Navbar.Item>
+                    <Navbar.Item href="#">Home</Navbar.Item>
                     <Link to="/wishlist">My Wishlist</Link>
                 </Navbar.Container>
                 <Navbar.Container position="end">

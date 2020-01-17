@@ -24,6 +24,38 @@ class App extends Component {
             loggedInUser: null
         }
     }
+
+    // Get loggedInUser from localStorage
+    getLoggedInUser() {
+        return localStorage.getItem("loggedInUser")
+    }
+
+    // Store loggedInUser username in local storage
+    setLoggedInUser(user) {
+        user ? localStorage.setItem("loggedInUser", user) : localStorage.removeItem("loggedInUser")
+    }
+
+
+    // handles login
+	// TODO: refactor to function as callback passed to SignIn form component
+	// 	- get username and password from form event
+	//	- authenticate with express server
+	// 	- update loginError in state if there is one and re-render SignIn form component
+	//	- update loggedInUser if successful (and save to local storage)
+	handleLogin(event, props) {
+		event.preventDefault()
+		const form = event.target
+		const username = form.elements.username.value
+		const password = form.elements.password.value
+		// TBD: Authenticate with server. If successful:
+		dispatchLoggedInUser({
+			type: "setLoggedInUser",
+			data: username
+		})
+		setLoggedInUser(username)
+		props.history.push("/posts")
+	}
+
     render() {
         const { loggedInUser } = this.state
         return (
