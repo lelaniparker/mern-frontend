@@ -34,7 +34,9 @@ class App extends Component {
                     <br />
                     <Link to="/vitamin">Vitamin</Link>
                     <br />
-            <Link to="/wishlist">My Wishlist</Link>
+                    <Link to="/wishlist">My Wishlist</Link>
+                    <br />
+                    <Link to="/dashboard">Dashboard</Link>
 
                 <Switch>
                     {/* this should be /vitamin/:id */}
