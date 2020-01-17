@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useReducer } from "react";
 
-const UserLoginIn = () => {
+const UserLoginIn = (props) => {
+    const { handleLogin } = props
 
     return (
-        <form>
+        <form onSubmit={(event) => handleLogin(event, props)}>
             <label className="label">Username</label>
             <input type="text" className="input" name="username" placeholder="Username" required></input>
             <label className="label">Password</label>
