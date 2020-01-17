@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+    Link,
     Route,
     BrowserRouter as Router,
     Switch
@@ -12,6 +13,9 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
+import {Container} from "react-bulma-components";
+
+import Vitamin from "./Vitamin/Vitamin";
 
 class App extends Component {
     constructor(props) {
@@ -24,18 +28,28 @@ class App extends Component {
         const { loggedInUser } = this.state
         return (
             <Router>
-                <Nav loggedInUser={loggedInUser} />
+                <Container>
+                    <Nav loggedInUser={loggedInUser} />
+                    <Link to="/blog">Blog</Link>
+                    <br />
+                    <Link to="/vitamin">Vitamin</Link>
+                    <br />
+            <Link to="/wishlist">My Wishlist</Link>
 
                 <Switch>
-                    {/* <Route path="/wishlist/:id" component={UserWishlist} />
-                    <Route path="/register" component={UserRegister} /> */
-                        <Route exact path="/login" component={UserLogin} /> /*
+                    {/* this should be /vitamin/:id */}
+                    <Route path="/vitamin/" component={Vitamin} />
+
+                    {/* This should be wishlist/:id */}
+                     <Route path="/wishlist/" component={UserWishlist} />
+                    {/*<Route path="/register" component={UserRegister} />*/}
+                    <Route path="/login" component={UserLogin} />
                     <Route path="/dashboard/:id" component={UserDashboard} />
                     <Route path="/blog/:id" component={BlogPost} />
-                    <Route path="/blog" component={Blog} /> */}
-                    {/* <Route exact path="/" component={HomePage} /> */}
+                    <Route path="/blog" component={Blog} />
+                    <Route exact path="/" component={HomePage} />
                 </Switch>
-
+                </Container>
             </Router>
         )
     }
