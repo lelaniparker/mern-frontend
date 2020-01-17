@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+    Link
+} from "react-router-dom";
 import {Heading,Section,Button} from 'react-bulma-components'
 
 export class UserDashboard extends React.Component {
@@ -12,6 +15,7 @@ export class UserDashboard extends React.Component {
     render() {
         return(
             <Section>
+                <Link to="/wishlist">My Wishlist</Link>
                 <Heading>Dashboard</Heading>
                 <Heading subtitle size={4}>Update Profile</Heading>
                     <form>
@@ -28,6 +32,7 @@ export class UserDashboard extends React.Component {
                     </form>
                 <br />
                 <Button>Delete Account</Button>
+                
             </Section>
         )
     }
