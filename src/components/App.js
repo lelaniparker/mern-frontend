@@ -66,6 +66,19 @@ const App = () => {
         return <Redirect to="/" />
     }
 
+    // Fetches blog posts from server and updates state
+    function fetchBlogPosts() {
+        getAllBlogPosts().then((response) => {
+            const allPosts = response
+            console.log("all posts from server:", allPosts)
+            dispatchBlogPosts ({
+                type: "setBlogPosts",
+                data: allPosts
+            })
+        }).catch((error) => {
+        console.log(`oops! Something is wrong - check the server. We got an error: ${error}`)
+    })
+    }
 
 
     return (
@@ -89,7 +102,7 @@ const App = () => {
                 <Route path="/logout" render={() => handleLogout()} />
                 {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
                 <Route path="/blog/:id" component={BlogPost} />
-                <Route path="/blog" component={Blog} />
+                <Route path="/blog" render={ () => <Blog fetchBlogPosts={fetchBlogPosts}/> } />
                 <Route exact path="/" component={HomePage} />
             </Switch>
             </Container>
