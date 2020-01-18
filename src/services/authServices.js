@@ -10,4 +10,14 @@ export async function loginUser(userInfo) {
         console.log("error: ", error)
         throw(error)
     }
-  }
+}
+
+export async function logoutUser() {
+    try {
+        return api.get("/auth/logout")
+    }
+    catch (error) {
+        console.log("an error occurred logging out", error)
+        throw(error)
+    }
+}

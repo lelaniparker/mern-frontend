@@ -3,7 +3,8 @@ import {
     Link,
     Route,
     BrowserRouter as Router,
-    Switch
+    Switch,
+    Redirect
 } from "react-router-dom";
 import stateReducer from "../config/stateReducer"
 import Nav from "./Nav/Nav";
@@ -16,7 +17,7 @@ import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
 import {Container} from "react-bulma-components";
 import Vitamin from "./Vitamin/Vitamin";
-import { loginUser } from "../services/authServices";
+import { loginUser, logoutUser } from "../services/authServices";
 
 const App = () => {
     const [loggedInUser, dispatchLoggedInUser] = useReducer(stateReducer, null);
@@ -41,13 +42,27 @@ const App = () => {
                 props.history.push("/")
             })
             .catch((error) => {
-  const status = error.response ? error.response.status : 500
-  console.log(`An error occurred authenticating: ${error} with status: ${status}`)
-})
+                const status = error.response ? error.response.status : 500
+                console.log(`An error occurred authenticating: ${error} with status: ${status}`)
+                dispatchLoginError({
+                    type: "setLoginError",
+                    data: "Authentication failed! Check your username and password"
+            })
+        })
     }
 
     function setLoggedInUser(user) {
         user ? localStorage.setItem("loggedInUser", user) : localStorage.removeItem("loggedInUser")
+    }
+
+    function handleLogout() {
+        logoutUser()
+        dispatchLoggedInUser({
+            type: "setLoggedInUser",
+            data:  null
+        })
+        setLoggedInUser(null)
+        return <Redirect to="/" />
     }
 
 
@@ -69,7 +84,8 @@ const App = () => {
                 {/* This should be wishlist/:id */}
                     <Route path="/wishlist/" component={UserWishlist} />
                 {/*<Route path="/register" component={UserRegister} />*/}
-                <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} />} />
+                <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
+                <Route path="/logout" render={() => handleLogout()} />
                 {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
                 <Route path="/blog/:id" component={BlogPost} />
                 <Route path="/blog" component={Blog} />
