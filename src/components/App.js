@@ -39,7 +39,7 @@ class App extends Component {
                     <Link to="/dashboard">Dashboard</Link>
 
                 <Switch>
-                    {/* this should be /vitamin/:id */}
+                    <Route exact path="/vitamin/:id" component={Vitamin} />
                     <Route path="/vitamin/" component={Vitamin} />
 
                     {/* This should be wishlist/:id */}
