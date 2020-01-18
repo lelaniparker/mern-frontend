@@ -13,7 +13,7 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
-import {Container} from "react-bulma-components";
+import { Container } from "react-bulma-components";
 
 import Vitamin from "./Vitamin/Vitamin";
 
@@ -38,19 +38,19 @@ class App extends Component {
                     <br />
                     <Link to="/dashboard">Dashboard</Link>
 
-                <Switch>
-                    {/* this should be /vitamin/:id */}
-                    <Route path="/vitamin/" component={Vitamin} />
+                    <Switch>
+                        {/* this should be /vitamin/:id */}
+                        <Route path="/vitamin/" component={Vitamin} />
 
-                    {/* This should be wishlist/:id */}
-                     <Route path="/wishlist/" component={UserWishlist} />
-                    {/*<Route path="/register" component={UserRegister} />*/}
-                    <Route path="/login" component={UserLogin} />
-                    <Route path="/dashboard/:id" component={UserDashboard} />
-                    <Route path="/blog/:id" component={BlogPost} />
-                    <Route path="/blog" component={Blog} />
-                    <Route exact path="/" component={HomePage} />
-                </Switch>
+                        {/* This should be wishlist/:id */}
+                        <Route path="/wishlist/" component={UserWishlist} />
+                        <Route path="/register" component={UserRegister} />
+                        <Route path="/login" component={UserLogin} />
+                        <Route path="/dashboard/:id" component={UserDashboard} />
+                        <Route path="/blog/:id" component={BlogPost} />
+                        <Route path="/blog" component={Blog} />
+                        <Route exact path="/" component={HomePage} />
+                    </Switch>
                 </Container>
             </Router>
         )

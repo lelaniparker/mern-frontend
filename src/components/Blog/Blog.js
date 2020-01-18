@@ -41,7 +41,7 @@ export class Blog extends React.Component {
                 </Fragment>
             )
         } else {
-            return(
+            return (
                 <Fragment>
                     {blogPosts.map(post => (
                         <BlogPost key={post._id} blogPost={post} />
@@ -51,8 +51,8 @@ export class Blog extends React.Component {
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <Fragment>
                 {this.renderBlog()}
             </Fragment>
