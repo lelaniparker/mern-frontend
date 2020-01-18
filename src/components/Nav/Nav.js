@@ -44,7 +44,7 @@ const Nav = (props) => {
                 <Navbar.Container position="end">
                     <Link to="/login">Login</Link>
                     <Navbar.Item href="#">Login</Navbar.Item>
-                    <Navbar.Item href="#">Register</Navbar.Item>
+                    <Link to="/register">Register</Link>
                 </Navbar.Container>
             </Fragment>
         )

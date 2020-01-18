@@ -84,7 +84,7 @@ const App = () => {
 
                 {/* This should be wishlist/:id */}
                     <Route path="/wishlist/" component={UserWishlist} />
-                {/*<Route path="/register" component={UserRegister} />*/}
+                <Route path="/register" component={UserRegister} />
                 <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
                 <Route path="/logout" render={() => handleLogout()} />
                 {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
