@@ -1,16 +1,13 @@
 import React, { Fragment, useReducer } from "react";
-import BlogPost from "../BlogPost/BlogPost";
-import Axios from "axios";
-import stateReducer from "../../config/stateReducer";
-import { getAllBlogPosts } from "../../services/blogServices"
+import BlogPost from "../BlogPost/BlogPost"
 
-const Blog = () => {
-    const [blogPosts, dispatchBlogPosts] = useReducer(stateReducer, [])
+const Blog = props => {
+    const { blogPosts, loggedInUser } = props
 
     return(
         <Fragment>
             {blogPosts.map(post => (
-                <BlogPost key={post._id} blogPost={post} />
+                <BlogPost key={post._id} blogPost={post} loggedInUser={loggedInUser} />
             ))}
         </Fragment>
     )

@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import {
     Link,
     Route,
@@ -19,10 +19,12 @@ import { Container } from "react-bulma-components";
 
 import Vitamin from "./Vitamin/Vitamin";
 import { loginUser, logoutUser } from "../services/authServices";
+import { getAllBlogPosts } from "../services/blogServices";
 
 const App = () => {
     const [loggedInUser, dispatchLoggedInUser] = useReducer(stateReducer, null);
     const [loginError, dispatchLoginError] = useReducer(stateReducer, null);
+    const [blogPosts, dispatchBlogPosts] = useReducer(stateReducer, [])
 
      function handleLogin(event, props) {
         event.preventDefault();
@@ -74,11 +76,19 @@ const App = () => {
             dispatchBlogPosts ({
                 type: "setBlogPosts",
                 data: allPosts
-            })
-        }).catch((error) => {
-        console.log(`oops! Something is wrong - check the server. We got an error: ${error}`)
-    })
+                })
+            }).catch((error) => {
+            console.log(`oops! Something is wrong - check the server. We got an error: ${error}`)
+        })
     }
+
+    // Use effect hook to initialise component on mount and when blog posts are updated
+	useEffect(()=> {
+        // for any initialisation to be performed when component mounts, or on update of state values in the second argument
+        fetchBlogPosts()
+        // return a function that specifies any actions on component unmount
+		return () => {}
+	}, [])
 
 
     return (
@@ -102,7 +112,7 @@ const App = () => {
                 <Route path="/logout" render={() => handleLogout()} />
                 {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
                 <Route path="/blog/:id" component={BlogPost} />
-                <Route path="/blog" render={ () => <Blog fetchBlogPosts={fetchBlogPosts}/> } />
+                <Route path="/blog" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> } />
                 <Route exact path="/" component={HomePage} />
             </Switch>
             </Container>
