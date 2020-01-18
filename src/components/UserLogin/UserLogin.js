@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useReducer } from "react";
 
-const SignIn = () => {
+const UserLoginIn = (props) => {
+    const { handleLogin, loginError } = props
 
     return (
-        <form>
+        <form onSubmit={(event) => handleLogin(event, props)}>
+            { loginError && <p className="has-text-danger">{ loginError }</p> }
             <label className="label">Username</label>
             <input type="text" className="input" name="username" placeholder="Username" required></input>
             <label className="label">Password</label>
@@ -13,4 +15,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default UserLoginIn
