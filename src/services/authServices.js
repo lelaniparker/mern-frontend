@@ -21,3 +21,16 @@ export async function logoutUser() {
         throw(error)
     }
 }
+
+export async function registerUser(userInfo) {
+    // call to server to register user
+    try {
+        const response = await api.post("/auth/register", userInfo)
+        console.log("got user back from server", response)
+        return response.data
+    }
+    catch (error) {
+        console.log("got error", error)
+        throw (error)
+    }
+}

@@ -15,7 +15,8 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
-import {Container} from "react-bulma-components";
+import { Container } from "react-bulma-components";
+
 import Vitamin from "./Vitamin/Vitamin";
 import { loginUser, logoutUser } from "../services/authServices";
 
