@@ -3,10 +3,8 @@ import {
     Link,
     Route,
     BrowserRouter as Router,
-    Switch,
-    Redirect
+    Switch
 } from "react-router-dom";
-import stateReducer from "../config/stateReducer"
 import Nav from "./Nav/Nav";
 import HomePage from "./HomePage/HomePage"
 import Blog from "./Blog/Blog";
@@ -15,7 +13,7 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
-import { Container } from "react-bulma-components";
+import {Container} from "react-bulma-components";
 
 import Vitamin from "./Vitamin/Vitamin";
 import { loginUser, logoutUser } from "../services/authServices";
@@ -56,16 +54,6 @@ const App = () => {
 
     function setLoggedInUser(user) {
         user ? localStorage.setItem("loggedInUser", user) : localStorage.removeItem("loggedInUser")
-    }
-
-    function handleLogout() {
-        logoutUser()
-        dispatchLoggedInUser({
-            type: "setLoggedInUser",
-            data:  null
-        })
-        setLoggedInUser(null)
-        return <Redirect to="/" />
     }
 
     // Fetches blog posts from server and updates state
@@ -119,7 +107,5 @@ const App = () => {
         </Router>
     )
 }
-
-
 
 export default App
