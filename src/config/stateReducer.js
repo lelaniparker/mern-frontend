@@ -6,6 +6,9 @@ export default function (state, action) {
         case "setLoginError": {
             return action.data
         }
+        case "setBlogPosts": {
+            return action.data
+        }
         default:
             return state
     }
