@@ -2,6 +2,7 @@ import React, { useState, useReducer, useEffect } from "react";
 import {
     Link,
     Route,
+    Redirect,
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
@@ -13,8 +14,8 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
 import UserWishlist from "./UserWishlist/UserWishlist";
-import {Container} from "react-bulma-components";
-
+import { Container } from "react-bulma-components";
+import stateReducer from "../config/stateReducer"
 import Vitamin from "./Vitamin/Vitamin";
 import { loginUser, logoutUser } from "../services/authServices";
 import { getAllBlogPosts } from "../services/blogServices";
@@ -70,11 +71,18 @@ const App = () => {
         })
     }
 
-    // Use effect hook to initialise component on mount and when blog posts are updated
+    function handleLogout() {
+        logoutUser()
+        dispatchLoggedInUser({
+            type: "setLoggedInUser",
+            data:  null
+        })
+        setLoggedInUser(null)
+        return <Redirect to="/" />
+    }
+
 	useEffect(()=> {
-        // for any initialisation to be performed when component mounts, or on update of state values in the second argument
         fetchBlogPosts()
-        // return a function that specifies any actions on component unmount
 		return () => {}
 	}, [])
 
@@ -99,7 +107,7 @@ const App = () => {
                 <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
                 <Route path="/logout" render={() => handleLogout()} />
                 {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
-                <Route path="/blog/:id" component={BlogPost} />
+                <Route path="/blog/:id" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> }/>
                 <Route path="/blog" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> } />
                 <Route exact path="/" component={HomePage} />
             </Switch>
