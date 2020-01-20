@@ -53,6 +53,10 @@ const App = () => {
         })
     }
 
+    function getLoggedInUser() {
+        return localStorage.getItem("loggedInUser")
+    }
+
     function setLoggedInUser(user) {
         user ? localStorage.setItem("loggedInUser", user) : localStorage.removeItem("loggedInUser")
     }
@@ -83,8 +87,14 @@ const App = () => {
 
 	useEffect(()=> {
         fetchBlogPosts()
+        dispatchLoggedInUser({
+            type: "setLoggedInUser",
+            data: getLoggedInUser()
+        })
+        // this return specifies any actions to occur when the component unmounts
 		return () => {}
 	}, [])
+
 
 
     return (
