@@ -1,6 +1,7 @@
 import React from 'react'
 import {Section,Heading,Columns,Image} from "react-bulma-components"
 import Axios from "axios";
+import { styles } from "../styles";
 
 export class HomePage extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ export class HomePage extends React.Component {
             <form data-cy="new-post-form">
 			<label className="label">Enter a Vitamin</label>
 			<input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="Vitamin" required></input>
-			<input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={{marginTop:10}}></input>
+			<input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={styles.padding}></input>
             </form>
             </Section>
 

@@ -101,12 +101,6 @@ const App = () => {
         <Router>
             <Container>
                 <Nav loggedInUser={loggedInUser} />
-                <Link to="/blog">Blog</Link>
-                <br />
-                <Link to="/vitamin">Vitamin</Link>
-                <br />
-                <Link to="/wishlist">My Wishlist</Link>
-
             <Switch>
                 {/* this should be /vitamin/:id */}
                 <Route path="/vitamin/:id" component={Vitamin} />
