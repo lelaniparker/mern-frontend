@@ -105,18 +105,18 @@ const App = () => {
                 <br />
                 <Link to="/vitamin">Vitamin</Link>
                 <br />
-        <Link to="/wishlist">My Wishlist</Link>
+                <Link to="/wishlist">My Wishlist</Link>
 
             <Switch>
                 {/* this should be /vitamin/:id */}
-                <Route path="/vitamin/" component={Vitamin} />
+                <Route path="/vitamin/:id" component={Vitamin} />
 
                 {/* This should be wishlist/:id */}
-                    <Route path="/wishlist/" component={UserWishlist} />
+                <Route path="/wishlist/:id" component={UserWishlist} />
                 <Route path="/register" component={UserRegister} />
                 <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
                 <Route path="/logout" render={() => handleLogout()} />
-                {/* <Route path="/dashboard/:id" component={UserDashboard} /> */}
+                <Route path="/dashboard/" component={UserDashboard} loggedInUser={loggedInUser} />
                 <Route path="/blog/:id" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> }/>
                 <Route path="/blog" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> } />
                 <Route exact path="/" component={HomePage} />

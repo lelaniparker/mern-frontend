@@ -42,7 +42,7 @@ export class Vitamin extends React.Component {
                     vitamins.map(vitamin => {
                         return (
                             <Section>
-                                <p><b>Product Name:</b><a href={vitamin.link}>{vitamin.productName}</a></p>
+                                <p><b>Product Name:</b>{vitamin.productName}</p>
                                 <Image src={vitamin.image}/>
                                 {vitamin.vitaminInformation.map((info) => {
                                     return (
