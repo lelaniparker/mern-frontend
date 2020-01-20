@@ -23,13 +23,24 @@ export const logoutUser = async () => {
 }
 
 export const registerUser = async (userInfo) => {
-  try {
-      const response = await api.post("/auth/register", userInfo)
-      console.log("got user back from server", response)
-      return response.data
-  }
-  catch (error) {
-      console.log("got error", error)
-      throw(error)
-  }
+    try {
+        const response = await api.post("/auth/register", userInfo)
+        console.log("got user back from server", response)
+        return response.data
+    }
+    catch (error) {
+        console.log("got error", error)
+        throw(error)
+    }
+}
+
+export const userAuthenticated = async () => {
+    try {
+        const response =  await api.get("/auth/user")
+        return response
+    }
+    catch(error) {
+        console.log("an error occurred checking for authenticated user:", error)
+        throw(error)
+    }
 }
