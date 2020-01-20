@@ -116,7 +116,7 @@ const App = () => {
                 <Route path="/register" component={UserRegister} />
                 <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
                 <Route path="/logout" render={() => handleLogout()} />
-                <Route path="/dashboard/:id" component={UserDashboard} />
+                <Route path="/dashboard/" component={UserDashboard} loggedInUser={loggedInUser} />
                 <Route path="/blog/:id" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> }/>
                 <Route path="/blog" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> } />
                 <Route exact path="/" component={HomePage} />
