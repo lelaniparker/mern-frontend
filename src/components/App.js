@@ -17,7 +17,7 @@ import UserWishlist from "./UserWishlist/UserWishlist";
 import { Container } from "react-bulma-components";
 import stateReducer from "../config/stateReducer"
 import Vitamin from "./Vitamin/Vitamin";
-import { loginUser, logoutUser } from "../services/authServices";
+import { loginUser, logoutUser, userAuthenticated } from "../services/authServices";
 import { getAllBlogPosts } from "../services/blogServices";
 
 const App = () => {
@@ -86,11 +86,23 @@ const App = () => {
     }
 
 	useEffect(()=> {
-        fetchBlogPosts()
-        dispatchLoggedInUser({
-            type: "setLoggedInUser",
-            data: getLoggedInUser()
-        })
+        fetchBlogPosts();
+
+        // If we have login information persisted and we're still logged into the server, set the state
+        userAuthenticated().then(() => {
+            dispatchLoggedInUser({
+                type: "setLoggedInUser",
+                data: getLoggedInUser()
+            })
+        }).catch((error) => {
+            console.log("got an error trying to check authenticated user:", error)
+            setLoggedInUser(null)
+            dispatchLoggedInUser({
+                type: "setLoggedInUser",
+                data: null
+            })
+        });
+
         // this return specifies any actions to occur when the component unmounts
 		return () => {}
 	}, [])
