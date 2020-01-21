@@ -9,7 +9,6 @@ import {
 import Nav from "./Nav/Nav";
 import HomePage from "./HomePage/HomePage"
 import Blog from "./Blog/Blog";
-import BlogPost from "./BlogPost/BlogPost";
 import UserDashboard from "./UserDashboard/UserDashboard";
 import UserLogin from "./UserLogin/UserLogin";
 import UserRegister from "./UserRegister/UserRegister";
@@ -19,6 +18,7 @@ import stateReducer from "../config/stateReducer"
 import Vitamin from "./Vitamin/Vitamin";
 import { loginUser, logoutUser, userAuthenticated } from "../services/authServices";
 import { getAllBlogPosts } from "../services/blogServices";
+import { retrieveUser, postUser } from "../services/userServices";
 
 const App = () => {
     const [loggedInUser, dispatchLoggedInUser] = useReducer(stateReducer, null);
@@ -40,7 +40,7 @@ const App = () => {
                     type: "setLoggedInUser",
                     data: username
                 })
-                setLoggedInUser(username)
+                setLoggedInUser(username);
                 props.history.push("/")
             })
             .catch((error) => {
