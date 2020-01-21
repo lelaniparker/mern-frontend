@@ -3,7 +3,7 @@ import {
     Link
 } from "react-router-dom";
 import {Heading,Section,Button,Level,Columns, Fragment} from 'react-bulma-components';
-import { styles } from "../styles";
+import { styles } from "../../styles/styles";
 
 const UserDashboard = props => {
     const { loggedInUser, userDetails } = props
