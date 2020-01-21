@@ -2,15 +2,20 @@ import React, { Fragment, useState } from "react";
 import { Navbar, Container, Button } from "react-bulma-components";
 import { Link } from "react-router-dom";
 
-
+// Nav is a functional component that displays the navbar.
 const Nav = (props) => {
+    // Active is used to see if the menu should be collapsed or not in mobile view.
     const [active, setActive] = useState(false)
+    // A different menu is shown if a user is logged in
     const { loggedInUser } = props
 
+    // The menu is hidden after a click on mobile view
     function hideMenu() {
         setActive(false)
     }
 
+    // When the user is logged in, this menu is displayed. It shows the user dashboard and wishlist, as well
+    // as the logout link
     function navLoggedIn() {
         return(
             <Fragment>
@@ -24,12 +29,12 @@ const Nav = (props) => {
                     <Navbar.Item><Link to={`/dashboard/`}>Dashboard</Link></Navbar.Item>
                     {/* <Navbar.Item href={`/wishlist?username=${loggedInUser}`}>My Wishlist</Navbar.Item> CHECKS IF USER IS LOGGED IN TO VIEW WISHLIST */}
                     <Link to="/logout" className="navbar-item" onClick={hideMenu}>Logout</Link>
-                    {/* <Navbar.Item href="#">Logout</Navbar.Item> */}
                 </Navbar.Container>
             </Fragment>
         )
     }
 
+    // When a user is logged out, it will display the menu where I user can log in or register
     function navLoggedOut() {
         return(
             <Fragment>
@@ -46,6 +51,9 @@ const Nav = (props) => {
         )
     }
 
+    // The return function shows which nav bar, depending on if the user is logged in or not. When the
+    // menu is clicked when it is in mobile view, it is closed by the setActive()
+    // The navbar will also either display the logged in user's username or the word "guest" if no one is logged in
     return(
         <Navbar color="light" fixed="top" active={active}>
             <Container>

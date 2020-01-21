@@ -2,16 +2,19 @@ import React from 'react'
 import {
     Link
 } from "react-router-dom";
-import {Heading,Section,Button,Level,Columns} from 'react-bulma-components';
+import {Heading,Section,Button,Level,Columns, Fragment} from 'react-bulma-components';
 import { styles } from "../styles";
 
 const UserDashboard = props => {
     const { loggedInUser, userDetails } = props
-    const { username, email, _id } = userDetails
+    if(userDetails){
+        const { username, email, _id } = userDetails
     console.log(username)
+    }
 
-    return(
-            <Section>
+    function usernameLoaded() {
+        return(
+            <Fragment>
                 <Level>
                     <Level.Side align="left">
                         <Level.Item>
@@ -41,7 +44,20 @@ const UserDashboard = props => {
                     <Columns.Column>
                     </Columns.Column>
                 </Columns>
-                
+            </Fragment>
+        )
+    }
+
+    function noUsername() {
+        return(
+            <p>Login to view your dashboard</p>
+        )
+    }
+
+    return(
+        <Section>
+            { userDetails ? usernameLoaded() : noUsername() }
+
 
         </Section>
     )
