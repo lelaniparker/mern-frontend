@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { registerUser } from "../../services/authServices";
-import { styles } from "../styles";
+import { styles } from "../../styles/styles";
 import { Heading, Columns, Section } from 'react-bulma-components';
 
 const RegisterUser = (props) => {

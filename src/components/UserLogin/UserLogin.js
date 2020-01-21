@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { styles } from "../styles";
+import { styles } from "../../styles/styles";
 import { Heading, Columns, Section } from 'react-bulma-components';
 
 

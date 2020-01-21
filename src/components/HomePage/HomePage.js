@@ -1,7 +1,7 @@
 import React from 'react'
 import { Section, Heading, Columns, Image, Level, Box } from "react-bulma-components"
 import Axios from "axios";
-import { styles } from "../styles";
+import { styles } from "../../styles/styles";
 
 // HomePage is a class component.
 export class HomePage extends React.Component {
