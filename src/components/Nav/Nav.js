@@ -39,7 +39,7 @@ const Nav = (props) => {
                     <Navbar.Item><Link to="/vitamin">Vitamin</Link></Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
-                    <Navbar.Item><Link to="/login">Log in</Link></Navbar.Item>.
+                    <Navbar.Item><Link to="/login">Log in</Link></Navbar.Item>
                     <Navbar.Item><Link to="/register">Register</Link></Navbar.Item>
                 </Navbar.Container>
             </Fragment>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Section,Heading,Columns,Image} from "react-bulma-components"
+import {Section,Heading,Columns,Image,Level,Box} from "react-bulma-components"
 import Axios from "axios";
 import { styles } from "../styles";
 
@@ -36,19 +36,28 @@ export class HomePage extends React.Component {
         const {vitamins} = this.state
         return(
         <Section>
+            <Level>
+                <Level.Item>
+                            <img alt="AnalyzeVit logo" src="analyzevit-logo-transparent.png" style={{height:250}}></img>
+                            </Level.Item>
+                            </Level>
+            <Level>
+                
             <Section>
-                <img alt="AnalyzeVit logo" src="analyzevit-logo-transparent.png" style={{height:250}}></img>
                 <Heading>Welcome!</Heading>
                 <p>At AnalyzeVit, we make it easy to compare the ingredients in your vitamins.</p>
             </Section>
 
-            <Section>
-            <form data-cy="new-post-form">
-			<label className="label">Enter a Vitamin</label>
-			<input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="Vitamin" required></input>
-			<input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={styles.padding}></input>
-            </form>
-            </Section>
+            <Level.Item>
+                <Box>
+                <form data-cy="new-post-form">
+                <label className="label">Search for a Vitamin</label>
+                <input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="e.g. Vitamin A" required></input>
+                <input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={styles.padding}></input>
+                </form>
+                </Box>
+            </Level.Item>
+            </Level>
 
             <Columns>
             { 

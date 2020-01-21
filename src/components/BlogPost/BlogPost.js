@@ -9,7 +9,7 @@ const BlogPost = props => {
     return (
         <Section>
             <Heading><Link to={`/blog/${_id}`}>{title}</Link></Heading>
-            <p>{username}</p>
+            <p>Author: {username}</p>
             {category && <p>Category: {category}</p>}
             <p>{content}</p>
         </Section>
