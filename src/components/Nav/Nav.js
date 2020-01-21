@@ -9,10 +9,13 @@ const Nav = (props) => {
     // A different menu is shown if a user is logged in
     const { loggedInUser } = props
 
+    // The menu is hidden after a click on mobile view
     function hideMenu() {
         setActive(false)
     }
 
+    // When the user is logged in, this menu is displayed. It shows the user dashboard and wishlist, as well
+    // as the logout link
     function navLoggedIn() {
         return(
             <Fragment>
@@ -26,7 +29,6 @@ const Nav = (props) => {
                     <Navbar.Item><Link to={`/dashboard/`}>Dashboard</Link></Navbar.Item>
                     {/* <Navbar.Item href={`/wishlist?username=${loggedInUser}`}>My Wishlist</Navbar.Item> CHECKS IF USER IS LOGGED IN TO VIEW WISHLIST */}
                     <Link to="/logout" className="navbar-item" onClick={hideMenu}>Logout</Link>
-                    {/* <Navbar.Item href="#">Logout</Navbar.Item> */}
                 </Navbar.Container>
             </Fragment>
         )

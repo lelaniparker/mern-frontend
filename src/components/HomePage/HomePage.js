@@ -65,7 +65,7 @@ export class HomePage extends React.Component {
         this.mounted = false;
     }
 
-    // currently the component will show all the vitamins in the database, and will filter these based on the search results. 
+    // currently the component will show all the vitamins in the database, and will filter these based on the search results.
     render() {
         const { vitamins, vitaminsToDisplay } = this.state
         return (
@@ -94,6 +94,9 @@ export class HomePage extends React.Component {
                 </Level>
 
                 <Columns>
+                    {/* If there are no results, a message displays to say there were no matches.
+                    Otherwise, here the vitamins from the search results are displayed.
+                    The vitamins are iterated over with the map function */}
                     {
                         vitaminsToDisplay.length > 0
                             ? vitaminsToDisplay.map(vitamin => {

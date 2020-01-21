@@ -69,8 +69,6 @@ const App = () => {
         userDetails ? localStorage.setItem("loggedInUser", userDetails.username) : localStorage.removeItem("loggedInUser")
     }
     function getUserId() {
-        console.log("user Id")
-        console.log(localStorage.getItem("userId"))
         return localStorage.getItem("userId")
     }
 
@@ -93,7 +91,13 @@ const App = () => {
         console.log(localStorage.getItem("userId"))
         retrieveUser(getUserId())
             .then((response) => {
-                console.log(response)
+                const userDetail = response.data;
+                console.log(userDetail)
+                console.log(userDetails)
+                dispatchUserDetails({
+                    type: "setUserDetails",
+                    data: userDetail
+                });
             })
             .catch((error) => {
                 console.log(`There was an error trying to fetch a user - error - ${error}`)
