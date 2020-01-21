@@ -3,6 +3,7 @@ import api from '../config/api';
 export const retrieveUser = async (userId) => {
     try {
         const url = `/${userId}`;
+        console.log(url)
         return await api.get(url);
     }
     catch (error) {

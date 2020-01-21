@@ -6,9 +6,9 @@ import {Heading,Section,Button} from 'react-bulma-components';
 import { styles } from "../styles";
 
 const UserDashboard = props => {
-    const { loggedInUser } = props
-    console.log("logged in user: ")
-    console.log(loggedInUser)
+    const { loggedInUser, userDetails } = props
+    const { username, email, _id } = userDetails
+    console.log(username)
 
     return(
             <Section>

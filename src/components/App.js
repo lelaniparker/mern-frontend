@@ -23,7 +23,8 @@ import { retrieveUser, postUser } from "../services/userServices";
 const App = () => {
     const [loggedInUser, dispatchLoggedInUser] = useReducer(stateReducer, null);
     const [loginError, dispatchLoginError] = useReducer(stateReducer, null);
-    const [blogPosts, dispatchBlogPosts] = useReducer(stateReducer, [])
+    const [blogPosts, dispatchBlogPosts] = useReducer(stateReducer, []);
+    const [userDetails, dispatchUserDetails] = useReducer(stateReducer, null)
 
      function handleLogin(event, props) {
         event.preventDefault();
@@ -35,12 +36,18 @@ const App = () => {
             username: username,
             password: password
         })
-            .then(() => {
+            .then((response) => {
+                console.log(response._id)
                 dispatchLoggedInUser({
                     type: "setLoggedInUser",
                     data: username
                 })
-                setLoggedInUser(username);
+                // set the user details when logged in
+                dispatchUserDetails ({
+                    type: "setUserDetails",
+                    data: response
+                })
+                setLoggedInUser(response);
                 props.history.push("/")
             })
             .catch((error) => {
@@ -57,22 +64,40 @@ const App = () => {
         return localStorage.getItem("loggedInUser")
     }
 
-    function setLoggedInUser(user) {
-        user ? localStorage.setItem("loggedInUser", user) : localStorage.removeItem("loggedInUser")
+    function setLoggedInUser(userDetails) {
+        userDetails ? localStorage.setItem("userId", userDetails._id) : localStorage.removeItem("useId")
+        userDetails ? localStorage.setItem("loggedInUser", userDetails.username) : localStorage.removeItem("loggedInUser")
+    }
+    function getUserId() {
+        console.log("user Id")
+        console.log(localStorage.getItem("userId"))
+        return localStorage.getItem("userId")
     }
 
     // Fetches blog posts from server and updates state
     function fetchBlogPosts() {
-        getAllBlogPosts().then((response) => {
-            const allPosts = response
-            console.log("all posts from server:", allPosts)
-            dispatchBlogPosts ({
-                type: "setBlogPosts",
-                data: allPosts
-                })
+        getAllBlogPosts()
+            .then((response) => {
+                const allPosts = response
+                dispatchBlogPosts ({
+                    type: "setBlogPosts",
+                    data: allPosts
+                    })
             }).catch((error) => {
-            console.log(`oops! Something is wrong - check the server. We got an error: ${error}`)
+                console.log(`oops! Something is wrong while fetching blog posts - check the server. We got an error: ${error}`)
         })
+    }
+
+    // gets user details
+    function fetchUserDetails() {
+        console.log(localStorage.getItem("userId"))
+        retrieveUser(getUserId())
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(`There was an error trying to fetch a user - error - ${error}`)
+            })
     }
 
     function handleLogout() {
@@ -85,22 +110,30 @@ const App = () => {
         return <Redirect to="/" />
     }
 
+    // before a component mounts, these functions take place. This is so that when we render the blog (and try to access other state etc), it is already loaded and we don't get an error that there is no data.
 	useEffect(()=> {
         fetchBlogPosts();
 
         // If we have login information persisted and we're still logged into the server, set the state
-        userAuthenticated().then(() => {
-            dispatchLoggedInUser({
-                type: "setLoggedInUser",
-                data: getLoggedInUser()
+        userAuthenticated()
+            .then(() => {
+                dispatchLoggedInUser({
+                    type: "setLoggedInUser",
+                    data: getLoggedInUser()
+                })
+                fetchUserDetails();
             })
-        }).catch((error) => {
-            console.log("got an error trying to check authenticated user:", error)
-            setLoggedInUser(null)
-            dispatchLoggedInUser({
-                type: "setLoggedInUser",
-                data: null
-            })
+            .catch((error) => {
+                console.log("got an error trying to check authenticated user:", error)
+                setLoggedInUser(null)
+                dispatchLoggedInUser({
+                    type: "setLoggedInUser",
+                    data: null
+                })
+                dispatchUserDetails ({
+                    type: "setUserDetails",
+                    data: null
+                })
         });
 
         // this return specifies any actions to occur when the component unmounts
@@ -122,7 +155,7 @@ const App = () => {
                 <Route path="/register" component={UserRegister} />
                 <Route path="/login" render={ (props) => <UserLogin {...props} handleLogin={handleLogin} loginError={loginError} />} />
                 <Route path="/logout" render={() => handleLogout()} />
-                <Route path="/dashboard/" component={UserDashboard} loggedInUser={loggedInUser} />
+                <Route path="/dashboard/" render={ (props) => <UserDashboard {...props} userDetails={userDetails} />} />
                 <Route path="/blog/:id" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> }/>
                 <Route path="/blog" render={ (props) => <Blog {...props} blogPosts={blogPosts} loggedInUser={loggedInUser}/> } />
                 <Route exact path="/" component={HomePage} />
