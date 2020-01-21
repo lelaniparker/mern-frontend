@@ -2,9 +2,11 @@ import React, { Fragment, useState } from "react";
 import { Navbar, Container, Button } from "react-bulma-components";
 import { Link } from "react-router-dom";
 
-
+// Nav is a functional component that displays the navbar.
 const Nav = (props) => {
+    // Active is used to see if the menu should be collapsed or not in mobile view.
     const [active, setActive] = useState(false)
+    // A different menu is shown if a user is logged in
     const { loggedInUser } = props
 
     function hideMenu() {
@@ -30,6 +32,7 @@ const Nav = (props) => {
         )
     }
 
+    // When a user is logged out, it will display the menu where I user can log in or register
     function navLoggedOut() {
         return(
             <Fragment>
@@ -46,6 +49,9 @@ const Nav = (props) => {
         )
     }
 
+    // The return function shows which nav bar, depending on if the user is logged in or not. When the
+    // menu is clicked when it is in mobile view, it is closed by the setActive()
+    // The navbar will also either display the logged in user's username or the word "guest" if no one is logged in
     return(
         <Navbar color="light" fixed="top" active={active}>
             <Container>

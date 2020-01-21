@@ -3,6 +3,7 @@ import { Section, Heading, Columns, Image, Level, Box } from "react-bulma-compon
 import Axios from "axios";
 import { styles } from "../styles";
 
+// HomePage is a class component.
 export class HomePage extends React.Component {
     searchVitamins(event, vitamins) {
         event.preventDefault()
@@ -23,11 +24,14 @@ export class HomePage extends React.Component {
                 }
                 return false
             })
+            // spreading out the filteredVitamins so they are pushed individually to the allFilteredVitamins array
             allFilteredVitamins.push(...filteredVitamins)
         }
         this.setState({ vitaminsToDisplay: allFilteredVitamins })
     }
 
+    // constructor for the class component. vitamins is an array of all the vitamins from the server's database.
+    // vitaminsToDisplay is the filtered vitamin's from the user's search.
     constructor(props) {
         super(props)
         this.mounted = false;
@@ -38,6 +42,7 @@ export class HomePage extends React.Component {
         }
     }
 
+    // Once the component has mounted, it makes an axios request to get all the vitamins from the server/database.
     componentDidMount() {
         Axios.request({
             url: 'https://analyzevit-back.herokuapp.com/data',
@@ -55,10 +60,12 @@ export class HomePage extends React.Component {
             })
     }
 
+    // When the component unmounts, mounted is set to false
     componentWillUnmount() {
         this.mounted = false;
     }
 
+    // currently the component will show all the vitamins in the database, and will filter these based on the search results. 
     render() {
         const { vitamins, vitaminsToDisplay } = this.state
         return (
@@ -90,7 +97,6 @@ export class HomePage extends React.Component {
                     {
                         vitaminsToDisplay.length > 0
                             ? vitaminsToDisplay.map(vitamin => {
-                                console.log(vitamin)
                                 return (
                                     <Columns.Column>
                                         <Heading className="subtitle">
