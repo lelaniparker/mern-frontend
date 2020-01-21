@@ -9,6 +9,9 @@ export default function (state, action) {
         case "setBlogPosts": {
             return action.data
         }
+        case "setUserDetails": {
+            return action.data
+        }
         default:
             return state
     }
