@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { registerUser } from "../../services/authServices";
+import { styles } from "../styles";
 
 const RegisterUser = (props) => {
 
@@ -28,13 +29,13 @@ const RegisterUser = (props) => {
 		<form onSubmit={handleRegister}>
 		{ registerError && <p className="has-text-danger">{ registerError }</p> }
 
-			<label className="label">Username</label>
+			<label className="label" style={styles.padding}>Username</label>
 			<input type="text" className="input" name="username" placeholder="Username" required></input>
-            <label className="label">Email address</label>
+            <label className="label" style={styles.padding}>Email address</label>
 			<input type="email" className="input" name="email" placeholder="Email" required></input>
-			<label className="label">Password</label>
+			<label className="label" style={styles.padding}>Password</label>
 			<input type="password" className="input" name="password" placeholder="Password" required></input>
-			<input type="submit" value="Register" className="button is-info"></input>
+			<input type="submit" value="Register" className="button is-info" style={styles.padding}></input>
 		</form>
 	)
 }

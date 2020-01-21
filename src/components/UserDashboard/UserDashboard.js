@@ -2,7 +2,8 @@ import React from 'react'
 import {
     Link
 } from "react-router-dom";
-import {Heading,Section,Button, Fragment} from 'react-bulma-components'
+import {Heading,Section,Button} from 'react-bulma-components';
+import { styles } from "../styles";
 
 const UserDashboard = props => {
     const { loggedInUser } = props
@@ -24,7 +25,7 @@ const UserDashboard = props => {
 
                         <label className="label">Password</label>
                         <input type="text" className="input" name="password" placeholder="Password" required></input>
-                        <input type="submit" value="Submit" className="button is-info" style={{marginTop:10}}></input>
+                        <input type="submit" value="Submit" className="button is-info" style={styles.padding}></input>
                     </form>
                 <br />
                 <Button>Delete Account</Button>
