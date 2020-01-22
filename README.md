@@ -166,16 +166,26 @@ Client Feedback
 ![Client feedback](docs/client_feedback2.png)
 ![Client feedback](docs/client_feedback3.png)
 
-## User Testing
+## Testing
 
-### Development Site
+### Unit Testing
+
+![Unit testing](docs/unit_testing.png)
+
+### Cypress / Framework Testing
+
+![Cypress testing](docs/cypress_testing.png)
+
+### User Testing
+
+#### Development Site
 
 ![Development testing](docs/dev_testing1.png)
 ![Development testing](docs/dev_testing2.png)
 ![Development testing](docs/dev_testing3.png)
 ![Development testing](docs/dev_testing4.png)
 
-### Production Site
+#### Production Site
 
 ![Production testing](docs/production_testing1.png)
 ![Production testing](docs/production_testing2.png)
