@@ -1,5 +1,6 @@
 import api from '../config/api';
 
+// gets user details from the server with a userId
 export const retrieveUser = async (userId) => {
     try {
         const url = `user/${userId}`;
@@ -11,10 +12,11 @@ export const retrieveUser = async (userId) => {
     }
 }
 
-export const postUser = async (userInfo) => {
+// Api request to update the user details
+export const putUser = async (userInfo) => {
     try {
         const url = `/${userInfo._id}`;
-        const response = await api.post(url, userInfo);
+        const response = await api.put(url, userInfo);
         console.log("updated user info, response from server:", response)
         return response.data
     }

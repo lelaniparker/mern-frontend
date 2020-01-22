@@ -1,3 +1,4 @@
+// Our state reducer is a switch statement that keeps track of what our state returns
 export default function (state, action) {
     switch(action.type) {
         case "setLoggedInUser": {

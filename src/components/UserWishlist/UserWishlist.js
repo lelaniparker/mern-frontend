@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+// user wishlist currently renders a mock wishlist that is hard coded in
 export class UserWishlist extends React.Component {
     constructor(props) {
         super(props)
@@ -418,6 +419,7 @@ export class UserWishlist extends React.Component {
     ]
 }]
 
+    // As the wishlist is an array, the render function iterates over the products in the wishlist
     render(){
         const { wishlist } = this.state
         return(

@@ -2,8 +2,7 @@ import React, { Fragment } from "react";
 import { Section,Image } from "react-bulma-components";
 import Axios from "axios";
 
-// need to get id for an individual item
-
+// Class component to display the vitamin data from the server. On load it loads an empty array as it has not yet gotten the data back from the server
 export class Vitamin extends React.Component {
     constructor(props) {
         super(props)
@@ -13,13 +12,13 @@ export class Vitamin extends React.Component {
         }
     }
 
+    // Once the component mounts, an axios request is made to receive the vitamin data, which is then passed to the state of the component.
     componentDidMount() {
         Axios.request({
             url: 'https://analyzevit-back.herokuapp.com/data',
         })
             .then(response => {
                 this.mounted = true;
-                // console.log(response.data)
                 this.setState({
                     vitamins: response.data
                 });
@@ -29,10 +28,12 @@ export class Vitamin extends React.Component {
             })
     }
 
+    // Once the component unmounts, the component is set to mounted = false
     componentWillUnmount() {
         this.mounted = false;
     }
 
+    // As the data is an array, the render function must iterate over each element with the .map() function. There is also another array within the data for the vitaminInformation, so this too is iterated over, to display all the ingredients of the vitamins. 
     render(){
         const { vitamins } = this.state
         return(
