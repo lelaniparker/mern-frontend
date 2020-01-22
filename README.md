@@ -67,6 +67,41 @@ The team established, agreed to, and adhered to the following standards.
 
 There was a continuous flow in which there were no fixed time sprints to allow for flexible time management. This meant that we were free to spend more time on the server-side application and continually refactor, as opposed to spending an equal amount of time on both the server and client.
 
-6.0 to >5.0 pts
-HD
-Simple and clear standards for planning methodology chosen and adhered to
+### Release Methodology
+
+The team committed to continuous delivery and deployed regularly as features were completed.
+
+![Lelani deploys](docs/deploy1.png)
+![Carlie deploys](docs/deploy2.png)
+![Tony deploys](docs/deploy3.png)
+
+#### Netlify / Front End Client Deployment
+
+![Netlify deployment](docs/netlify_deploy.png)
+
+#### Heroku / Back End Deployment
+
+![Heroku deployment](docs/heroku_deploy1.png)
+![Heroku deployment](docs/heroku_deploy2.png)
+![Heroku deployment](docs/heroku_deploy3.png)
+![Heroku deployment](docs/heroku_deploy4.png)
+
+### Roles
+
+Following the Kanban methodology, the team did not employ roles. Instead, team members worked together by pair programming and working on features individually when appropriate. Trello screenshots found above demonstrate the self-assignment of tasks that members carried out, working on features as they are required.
+
+### Key Metrics
+
+The standard established required at least two members to work on a task if a single team member had been working on the feature for three days and was not approaching completion. This is shown in Trello where certain cards had more than one team member designated as being responsible for that task.
+
+### Change Philosophy
+
+Team members had agreed to allow for change to occur at any time and that the Kanban board was to remain current throughout the project. As evidenced by the changing of cards and assignment of tasks to certain members, the team had adhered to using Trello extensively which greatly benefitted the project.
+
+### Stand-ups
+
+The standard required that there be at least one stand-up each working day of the development cycle. The team far exceeded this requirement by holding multiple stand-ups throughout each working day. This allowed team members to be updated on tasks others were working on, also allowing for opportunities to ask for help and provide help.
+
+### Client Communication
+
+The standard agreed upon stated that the team was to communicate with the client through the use of Slack. This was abided by all team members. Correspondence was to occur once a week but, due to the unfortunate timing of circumstances, our client was not always available. However, the team did succeed in contacting the client for final user testing of our end product that had been deployed.
