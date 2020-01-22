@@ -29,5 +29,18 @@ describe('Test login', () => {
         cy.get("[data-cy=username]").type(fixtures.registeredUser.username)
         cy.get("[data-cy=password]").type(fixtures.registeredUser.password)
         cy.get("[data-cy=loginButton]").click()
-        //cy.url().should("include", "") })
+        cy.url().should("include", "/")
     })
+})
+
+// Testing to see if user can log out
+describe('Logout', () => {
+    it('should logout user', () => {
+        cy.get("[data-cy=login]").click()
+        cy.get("[data-cy=username]").type(fixtures.registeredUser.username)
+        cy.get("[data-cy=password]").type(fixtures.registeredUser.password)
+        cy.get("[data-cy=loginButton]").click()
+        cy.get('[data-cy=logout]').click()
+        cy.url().should("include", "/")
+    })
+})

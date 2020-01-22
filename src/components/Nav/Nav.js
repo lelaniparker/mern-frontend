@@ -17,7 +17,7 @@ const Nav = (props) => {
     // When the user is logged in, this menu is displayed. It shows the user dashboard and wishlist, as well
     // as the logout link
     function navLoggedIn() {
-        return(
+        return (
             <Fragment>
                 <Navbar.Container position="start">
                     <Navbar.Item><Link to="/">Home</Link></Navbar.Item>
@@ -28,7 +28,7 @@ const Nav = (props) => {
                 <Navbar.Container position="end">
                     <Navbar.Item><Link to={`/dashboard/`}>Dashboard</Link></Navbar.Item>
                     {/* <Navbar.Item href={`/wishlist?username=${loggedInUser}`}>My Wishlist</Navbar.Item> CHECKS IF USER IS LOGGED IN TO VIEW WISHLIST */}
-                    <Link to="/logout" className="navbar-item" onClick={hideMenu}>Logout</Link>
+                    <Link to="/logout" data-cy="logout" className="navbar-item" onClick={hideMenu}>Logout</Link>
                 </Navbar.Container>
             </Fragment>
         )
@@ -36,7 +36,7 @@ const Nav = (props) => {
 
     // When a user is logged out, it will display the menu where I user can log in or register
     function navLoggedOut() {
-        return(
+        return (
             <Fragment>
                 <Navbar.Container position="start">
                     <Navbar.Item><Link to="/">Home</Link></Navbar.Item>
@@ -44,7 +44,7 @@ const Nav = (props) => {
                     <Navbar.Item><Link to="/vitamin">Vitamin</Link></Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
-                    <Navbar.Item><Link to="/login" data-cy="login">Log in</Link></Navbar.Item>
+                    <Navbar.Item><Link to="/login" data-cy="login" >Log in</Link></Navbar.Item>
                     <Navbar.Item><Link to="/register">Register</Link></Navbar.Item>
                 </Navbar.Container>
             </Fragment>
@@ -54,11 +54,11 @@ const Nav = (props) => {
     // The return function shows which nav bar, depending on if the user is logged in or not. When the
     // menu is clicked when it is in mobile view, it is closed by the setActive()
     // The navbar will also either display the logged in user's username or the word "guest" if no one is logged in
-    return(
-        <Navbar color="light" fixed="top" active={active}>
+    return (
+        <Navbar data-cy="navbar" color="light" fixed="top" active={active}>
             <Container>
                 <Navbar.Brand>
-                    <Navbar.Burger onClick={() => {setActive(!active)}} />
+                    <Navbar.Burger onClick={() => { setActive(!active) }} />
                 </Navbar.Brand>
                 <Navbar.Menu>
                     {/* Render the relevant links depending on whether or not a user is logged in  */}
