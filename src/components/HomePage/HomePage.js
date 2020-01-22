@@ -5,6 +5,7 @@ import { styles } from "../../styles/styles";
 
 // HomePage is a class component.
 export class HomePage extends React.Component {
+    // Function searches through all vitamins and returns array of vitamins that match search terms
     searchVitamins(event, vitamins) {
         event.preventDefault()
         const form = event.target
