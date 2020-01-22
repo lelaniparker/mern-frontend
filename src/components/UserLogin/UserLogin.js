@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { styles } from "../../styles/styles";
 import { Heading, Columns, Section } from 'react-bulma-components';
 

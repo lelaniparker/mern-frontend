@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Navbar, Container, Button } from "react-bulma-components";
+import { Navbar, Container } from "react-bulma-components";
 import { Link } from "react-router-dom";
 
 // Nav is a functional component that displays the navbar.
