@@ -1,8 +1,8 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { styles } from "../../styles/styles";
 import { Heading, Columns, Section } from 'react-bulma-components';
 
-
+// This functional component handles the user login. It is a form that on submit callsback to the handleLogin function that was passed in as props. If there is an error back from the server, this form will display the error
 const UserLogin = (props) => {
     const { handleLogin, loginError } = props
 

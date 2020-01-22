@@ -5,14 +5,19 @@ import {
 import {Heading,Section,Button,Level,Columns, Fragment} from 'react-bulma-components';
 import { styles } from "../../styles/styles";
 
+// component displays user dashboard. User details are passed in as props
 const UserDashboard = props => {
-    const { loggedInUser, userDetails } = props
+    const { userDetails } = props
+
+    // At this point in time a visitor to the website could possibly view the dashboard url.
+    // If a user sees the page and isn't logged in, these variables wont be loaded, as they
+    // would cause an error
     if(userDetails){
         const { username, email, _id } = userDetails
-    console.log(username)
     }
 
-    function usernameLoaded() {
+    // If there is a user logged in, this will be rendered
+    function userDetailsLoaded() {
         return(
             <Fragment>
                 <Level>
@@ -48,56 +53,22 @@ const UserDashboard = props => {
         )
     }
 
-    function noUsername() {
+    // If no user is logged in, this will render
+    function noUser() {
         return(
             <p>Login to view your dashboard</p>
         )
     }
 
+    // ternary that checks if the userDetails are loaded
     return(
         <Section>
-            { userDetails ? usernameLoaded() : noUsername() }
+            { userDetails ? userDetailsLoaded() : noUser() }
 
 
         </Section>
     )
 
 }
-
-// export class UserDashboard extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             loggedInUser: null
-//         }
-//         // const userId = props.match.params.id
-//         const { match } = props
-//     }
-
-//     render() {
-//         return(
-//             <Section>
-//                 <Link to="/wishlist">My Wishlist</Link>
-//                 <Heading>Dashboard</Heading>
-//                 <Heading subtitle size={4}>Update Profile</Heading>
-//                     <form>
-//                         <label className="label">Username</label>
-//                         <input type="text" className="input" name="username" placeholder="Username" required></input>
-//                         <label className="label">Email</label>
-//                         <input type="text" className="input" name="email" placeholder="Email" required></input>
-
-//                         <Heading subtitle size={4}>Update Password</Heading>
-
-//                         <label className="label">Password</label>
-//                         <input type="text" className="input" name="password" placeholder="Password" required></input>
-//                         <input type="submit" value="Submit" className="button is-info" style={{marginTop:10}}></input>
-//                     </form>
-//                 <br />
-//                 <Button>Delete Account</Button>
-
-//             </Section>
-//         )
-//     }
-// }
 
 export default UserDashboard

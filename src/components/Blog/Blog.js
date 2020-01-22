@@ -1,4 +1,4 @@
-import React, { Fragment, useReducer } from "react";
+import React, { Fragment } from "react";
 import BlogPost from "../BlogPost/BlogPost";
 import { getBlogPost } from "../../services/blogServices"
 import { Section } from "react-bulma-components"

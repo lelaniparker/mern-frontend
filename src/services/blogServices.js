@@ -1,5 +1,6 @@
 import api from "../config/api"
 
+// This filters the blog posts to find the post that matches the post id
 export const getBlogPost = (blogPosts, id) => {
     return blogPosts.filter(post => post._id === id)
 }
