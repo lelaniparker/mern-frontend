@@ -5,6 +5,8 @@
 * Client: https://analyzevit.netlify.com/
 * Server: http://analyzevit-back.herokuapp.com/
 
+Documentation can also be viewed here: https://github.com/Lelani82/mern-frontend
+
 ## Authors
 
 * **Carlie Hamilton** – [BlueCodeThree](https://github.com/BlueCodeThree)
