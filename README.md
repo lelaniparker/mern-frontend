@@ -24,7 +24,7 @@ React Router is a collection of navigational components that compose declarative
 
 ### Chai
 
-Chai is an assertion library that helps us write tests in a more readable manner.
+Chai is an assertion library that helps us write tests in a more readable manner. This was used with Mocha.
 
 ### Cross-Origin Resource Sharing
 
@@ -36,11 +36,11 @@ Express is a minimal and flexible Node.js web application framework that provide
 
 ### Jest
 
-Jest is a library for testing JavaScript code. For this project, Jest was used to test the server-side back end.
+Jest is a library for testing JavaScript code. For this project, Jest was used to test the client front end.
 
 ### Mocha
 
-Mocha is a JavaScript test framework running on Node.js, allowing for easy asynchronous testing. Mocha was used to test the client front end in this project.
+Mocha is a JavaScript test framework running on Node.js, allowing for easy asynchronous testing. Mocha was used to test the server-side back end in this project.
 
 ### Mongoose
 
