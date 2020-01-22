@@ -86,8 +86,8 @@ export class HomePage extends React.Component {
                     <Level.Item>
                         <Box>
                             <form data-cy="new-post-form" onSubmit={(event) => this.searchVitamins(event, vitamins)}>
-                                <label className="label">Enter a Vitamin</label>
-                                <input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="Vitamin" required></input>
+                                <label className="label">Search for a Vitamin</label>
+                                <input type="text" className="input" data-cy="vitamin" name="vitamin" placeholder="e.g. B12" required></input>
                                 <input type="submit" value="Submit" data-cy="post-submit" className="button is-info" style={styles.padding}></input>
                             </form>
                         </Box>
