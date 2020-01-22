@@ -24,7 +24,7 @@ React Router is a collection of navigational components that compose declarative
 
 ### Chai
 
-Chai is an assertion library that helps us write tests in a more readable manner.
+Chai is an assertion library that helps us write tests in a more readable manner. This was used with Mocha.
 
 ### Cross-Origin Resource Sharing
 
