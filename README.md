@@ -153,3 +153,10 @@ The standard required that there be at least one stand-up each working day of th
 ### Client Communication
 
 The standard agreed upon stated that the team was to communicate with the client through the use of Slack. This was abided by all team members. Correspondence was to occur once a week but, due to the unfortunate timing of circumstances, our client was not always available. However, the team did succeed in contacting the client for final user testing of our end product that had been deployed.
+
+![Client communication](docs/client_communication1.png)
+![Client communication](docs/client_communication2.png)
+![Client communication](docs/client_communication3.png)
+![Client feedback](docs/client_feedback1.png)
+![Client feedback](docs/client_feedback2.png)
+![Client feedback](docs/client_feedback3.png)
