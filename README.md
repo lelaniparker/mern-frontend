@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AnalyzeVit
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+* **Carlie Hamilton** – [BlueCodeThree](https://github.com/BlueCodeThree)
+* **Lelani Parker** – [Lelani82](https://github.com/Lelani82)
+* **Tony Huynh** – [t-hnh10](https://github.com/t-hnh10)
 
-### `npm start`
+## Source Control Methodology
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+PRG1006-2.1 Employ and utilise proper source control methodology
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The source control methodology adopted in this project was the Feature Branch Workflow. This workflow can be encapsulated in the idea that all feature development should take place in a dedicated branch instead of the `master` branch. This arrangement allows for easier collaboration between multiple developers to work on particular features of the application without disturbing the main codebase. Thus, minimising the potential for onerous merge conflicts.
 
-### `npm test`
+Below is an example of the regular and frequent commits as executed by the team.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Source Control Example 1](docs/source_control1.png)
 
-### `npm run build`
+Following the completion of work on dedicated branches, team members demonstrated their exceptional capabilities in employing the Feature Branch Workflow by carrying out pull requests, reviewing other members' work and merging changes to `master` branch.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Source Control Example 2](docs/source_control2.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Project Management Methodology
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+PRG1006-2.2 Employ and utilise project management methodology
 
-### `npm run eject`
+Slack was the main point of communication between the team members. Where certain team members faced difficulties regarding personal and professional matters, such matters would be communicated via Slack and other team members would be delegated and assume various tasks. In assisting fellow members, the team was able to commit to the project timeline as outlined in the planning stages.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+See below for evidence of communication.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Slack communication](docs/slack.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The team used a Kanban board for task delegation, with tickets assigned to team members taking into consideration the member's strengths and weaknesses. A robust labelling system was used in order to categorise tasks; these included `Part A`, `Part B`, `User Story`, `Criteria Check`, `BackEnd`, `FrontEnd`, `README`, & `Future Enhancement`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Below are screenshots of the Trello board, taken after major work had been completed.
 
-## Learn More
+7 December 2019
+![Trello 07/12/19](docs/2019-12-07_Trello.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+8 December 2019
+![Trello 08/12/19](docs/2019-12-08_Trello.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+13 January 2020
+![Trello 13/01/20](docs/2020-01-13_Trello.png)
 
-### Code Splitting
+14 January 2020
+![Trello 14/01/20](docs/2020-01-14_Trello.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+17 January 2020
+![Trello 17/01/20](docs/2020-01-17_Trello.png)
 
-### Analyzing the Bundle Size
+21 January 2020
+![Trello 21/01/20](docs/2020-01-21_Trello.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+22 January 2020
+![Trello 22/01/20](docs/2020-01-22_Trello.png)
 
-### Making a Progressive Web App
+## Task Delegation Methodology
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+PRG1006-2.3 Employ and utilise task delegation methodology
 
-### Advanced Configuration
+The methodology used in this project was the Kanban methodology, a framework allowing us to implement Agile software development while benefitting from planning flexibility, shortened time cycles, fewer bottlenecks and continuous delivery.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+The team established, agreed to, and adhered to the following standards.
 
-### Deployment
+### Cadence
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+There was a continuous flow in which there were no fixed time sprints to allow for flexible time management. This meant that we were free to spend more time on the server-side application and continually refactor, as opposed to spending an equal amount of time on both the server and client.
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+6.0 to >5.0 pts
+HD
+Simple and clear standards for planning methodology chosen and adhered to
