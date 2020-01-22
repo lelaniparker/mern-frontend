@@ -6,6 +6,54 @@
 * **Lelani Parker** – [Lelani82](https://github.com/Lelani82)
 * **Tony Huynh** – [t-hnh10](https://github.com/t-hnh10)
 
+## Libraries Used
+
+CMP1043-1.3 Appropriate use of libraries used in the app
+
+### Axios
+
+Axios is a lightweight HTTP client based on the $http service in Angular.js and similar to the Fetch API. It allows us to take advantage of `async` and `await` because it is promise-based, this leads to more readable asynchronous code. It also allows us to intercept and cancel requests. Cross site request forgery can also be prevented using Axios as there is built-in client side protection.
+
+### React-bulma-components
+
+React components for Bulma allows for the implementation of the Bulma framework, compatible with most used React Frameworks, such as Gatsby, CRA, and Next.js. By using Bulma, the development team avoided the need to manually style the website with CSS. Thereby saving time and improving project management efficiency.
+
+### React Router
+
+React Router is a collection of navigational components that compose declaratively within our application. This standard routing library manages the URLs, allowing us to implement navigation through the React application with multiple views.
+
+### Chai
+
+Chai is an assertion library that helps us write tests in a more readable manner.
+
+### Cross-Origin Resource Sharing
+
+Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin.
+
+### Express
+
+Express is a minimal and flexible Node.js web application framework that provides several features for web applications. Included in it are a myriad of HTTP utility methods and middleware, allowing us to create robust APIs quickly and easily.
+
+### Jest
+
+Jest is a library for testing JavaScript code. For this project, Jest was used to test the server-side back end.
+
+### Mocha
+
+Mocha is a JavaScript test framework running on Node.js, allowing for easy asynchronous testing. Mocha was used to test the client front end in this project.
+
+### Mongoose
+
+Mongoose provides a straight-forward, schema-based solution to model our application data. It includes built-in type casting, validation, query building, and business logic hooks.
+
+### Passport
+
+Passport is authentication middleware for Node, serving the purpose of authenticating requests. When writing modules, encapsulation is a virtue, so Passport delegates all other functionality to the application.
+
+### Nodemon
+
+Nodemon is a utility that monitors any changes in our source and automatically restarts the server. This has allowed us to save time by avoiding the need to have to continually refresh the server.
+
 ## Source Control Methodology
 
 PRG1006-2.1 Employ and utilise proper source control methodology
