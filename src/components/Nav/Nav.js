@@ -21,9 +21,8 @@ const Nav = (props) => {
             <Fragment>
                 <Navbar.Container position="start">
                     <Navbar.Item><Link to="/">Home</Link></Navbar.Item>
-                    <Navbar.Item><Link to="/wishlist">My Wishlist</Link></Navbar.Item>
                     <Navbar.Item><Link to="/blog">Blog</Link></Navbar.Item>
-                    <Navbar.Item><Link to="/vitamin">Vitamin</Link></Navbar.Item>
+                    <Navbar.Item><Link to="/wishlist">My Wishlist</Link></Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
                     <Navbar.Item><Link to={`/dashboard/`}>Dashboard</Link></Navbar.Item>
@@ -41,7 +40,6 @@ const Nav = (props) => {
                 <Navbar.Container position="start">
                     <Navbar.Item><Link to="/">Home</Link></Navbar.Item>
                     <Navbar.Item><Link to="/blog">Blog</Link></Navbar.Item>
-                    <Navbar.Item><Link to="/vitamin">Vitamin</Link></Navbar.Item>
                 </Navbar.Container>
                 <Navbar.Container position="end">
                     <Navbar.Item><Link to="/login">Log in</Link></Navbar.Item>
