@@ -1,5 +1,10 @@
 # AnalyzeVit
 
+## Deployed Website
+
+* Client: https://analyzevit.netlify.com/
+* Server: http://analyzevit-back.herokuapp.com/
+
 ## Authors
 
 * **Carlie Hamilton** – [BlueCodeThree](https://github.com/BlueCodeThree)
@@ -175,6 +180,8 @@ Client Feedback
 ### Cypress / Framework Testing
 
 ![Cypress testing](docs/cypress_testing.png)
+
+For a recording of Cypress testing, please see `cypress/videos/users/loginLogout.spec.js.mp4`.
 
 ### User Testing
 
